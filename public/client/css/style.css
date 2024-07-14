@@ -1,0 +1,242 @@
+header {
+    background-color: #000000;
+    height: 80px;
+    border-bottom: 1px solid rgb(99, 84, 84);
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.social-icons a {
+    color: white;
+    margin-right: 15px; /* Để tạo khoảng cách giữa các biểu tượng */
+    font-size: 24px; /* Kích thước của biểu tượng */
+}
+
+.ic {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%; /* Làm cho hình ảnh thành hình tròn */
+    border: 2px solid white;
+}
+
+.logo img {
+    max-height: 56px; /* Đặt chiều cao tối đa cho logo */
+    margin: auto;
+}
+
+.h100 {
+    height: 100%;
+}
+
+nav {
+    background-color: #292929;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /* Đảm bảo các thẻ li nằm ngang */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-link {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    position: relative; /* Đặt vị trí tương đối để submenu có thể hiển thị */
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background-color: #fff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Đảm bảo submenu hiển thị phía trên */
+}
+
+.submenu .nav-item {
+    width: 200px; /* Đảm bảo chiều rộng phù hợp cho các mục con */
+}
+
+.submenu .nav-link {
+    color: #000;
+    background-color: #f9f9f9;
+    padding: 10px;
+    display: block;
+}
+
+.submenu .nav-link:hover {
+    background-color: #ddd;
+}
+
+.nav-item:hover .submenu {
+    display: block;
+}
+
+
+/* CSS cho cụm banner */
+.banner {
+    display: flex;
+    align-items: center; /* Căn giữa theo chiều dọc */
+}
+
+.banner .col-lg-6,
+.banner .col-lg-3 {
+    padding: 0; /* Loại bỏ padding để hình ảnh không bị lệch */
+    overflow: hidden; /* Đảm bảo phần ảnh phóng to không vượt ra ngoài khung */
+    position: relative; /* Đảm bảo các ảnh không vượt quá khung khi phóng to */
+}
+
+.banner img {
+    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của phần tử cha */
+    height: 100%; /* Đảm bảo chiều cao đồng nhất cho tất cả các ảnh */
+    object-fit: cover; /* Đảm bảo hình ảnh không bị biến dạng */
+    display: block; /* Loại bỏ khoảng cách dưới hình ảnh */
+    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi mượt mà */
+    max-height: 300px; /* Chiều cao tối đa cho các ảnh, điều chỉnh theo nhu cầu */
+}
+
+.banner img:hover {
+    transform: scale(1.1); /* Phóng to ảnh lên 10% khi hover */
+}
+
+
+/* Content Home */
+
+.featured-news-header {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.featured-news-title {
+    margin-top: 10px; /* Khoảng cách trên tiêu đề tin tức */
+    font-weight: bold; /* Độ đậm của tiêu đề */
+}
+
+.featured-news-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    max-width: 70%;
+    margin: 0 auto;
+    padding: 10px;
+    overflow-x: auto; /* Cho phép cuộn ngang khi cần thiết */
+}
+
+.featured-news {
+    flex: 0 0 30%;
+    text-align: center;
+    padding: 20px;
+    flex-shrink: 0; /* Ngăn các phần tử con co lại quá nhiều */
+    max-width: 25%; /* Giới hạn chiều rộng tối đa của mỗi phần tử */
+}
+
+.featured-news img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+.featured-news-title {
+    margin-top: 10px;
+    font-weight:500;
+    font-size: small;
+    text-align: left;
+}
+.time {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 400;
+    color: #333;
+    margin-top: 5px;
+    /* Thêm các thuộc tính CSS khác tại đây */
+}
+
+.scrollable::-webkit-scrollbar {
+    height: 10px;
+}
+
+.scrollable::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.scrollable::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.scrollable::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+.bna{
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+.bna img{
+    width: 100%;
+}
+
+
+/*  Footer */
+.site-footer {
+    margin-top: 30px;
+    background-color: #333;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.site-footer h3 {
+    color: #fff;
+}
+
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.site-footer ul li {
+    margin-bottom: 10px;
+}
+
+.site-footer ul li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.site-footer ul li a:hover {
+    color: #fff;
+}
+
+.tag-cloud li {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.tag-cloud li a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.tag-cloud li a:hover {
+    color: #fff;
+}
