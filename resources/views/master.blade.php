@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="/client/css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
+
 <body>
 
     {{-- Header --}}
@@ -28,7 +30,8 @@
                     <img src="/client/image/logo.webp" alt="Logo">
                 </div>
                 <div class="col-lg-4 text-center">
-                    <img src="https://th.bing.com/th/id/OIP.2hAVCZRMcBjsE8AGQfWCVQHaHa?rs=1&pid=ImgDetMain" alt="" style="height: 25px"><span class="ml-1 text-white">Login</span>
+                    <img src="https://th.bing.com/th/id/OIP.2hAVCZRMcBjsE8AGQfWCVQHaHa?rs=1&pid=ImgDetMain"
+                        alt="" style="height: 25px"><span class="ml-1 text-white">Login</span>
                 </div>
             </div>
         </div>
@@ -36,8 +39,6 @@
 
 
     {{-- Nav --}}
-
-
     <nav>
         <div class="container">
             <div class="row align-items-center">
@@ -74,7 +75,8 @@
                 <div class="col-lg-3 d-flex justify-content-end align-items-center">
                     <!-- Nội dung cột cuối cùng -->
                     <form class="form-inline">
-                        <input class="form-control form-control-sm mr-1" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                        <input class="form-control form-control-sm mr-1" type="search" placeholder="Tìm kiếm"
+                            aria-label="Search">
                         <button class="btn btn-outline-success btn-sm" type="submit">Tìm kiếm</button>
                     </form>
                 </div>
@@ -102,8 +104,10 @@
     </div>
     <div class="featured-news-container">
         <div class="featured-news">
-            <img src="/client/image/im1.webp" alt="News Image 1">
-            <div class="featured-news-title">Champions League 2024: Real Madrid vô địch thế nào?</div>
+            <a href="chitiet/1'">
+                <img src="/client/image/im1.webp" alt="News Image 1">
+                <div class="featured-news-title">Champions League 2024: Real Madrid vô địch thế nào?</div>
+            </a>
             <p class="time">6:50 12/11/2024</p>
         </div>
         <div class="featured-news">
@@ -175,4 +179,5 @@
     </footer>
 
 </body>
+
 </html>

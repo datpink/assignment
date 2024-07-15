@@ -33,7 +33,11 @@ header {
 }
 
 nav {
-    background-color: #292929;
+    background-color: #242424;
+    position: sticky;
+    top: 0; /* Đặt vị trí top = 0 để ghim cố định navbar trên đỉnh trang */
+    z-index: 1000; /* Đảm bảo navbar hiển thị trên các phần tử khác trên trang */
+    width: 100%; /* Chiều rộng 100% để giãn ra cả chiều ngang */
 }
 
 .navbar-nav {

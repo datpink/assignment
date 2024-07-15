@@ -15,67 +15,45 @@
             width: 70%;
             margin: 0 auto;
             display: flex;
-            height: calc(100vh - 60px);
-            /* Trừ chiều cao của header */
-            overflow-y: hidden;
         }
-
         .main-content {
-            flex: 1;
             padding: 20px;
             background-color: #f0f0f0;
-            overflow-y: scroll;
-            scrollbar-width: none;
-            /* Firefox */
-            -ms-overflow-style: none;
-            /* IE 10+ */
+            width: 70%
         }
-
-        .main-content::-webkit-scrollbar {
-            display: none;
-            /* Chrome, Safari, Opera */
-        }
-
         .sidebar {
             width: 30%;
             padding: 20px;
             background-color: #e0e0e0;
-            overflow-y: scroll;
             height: 100%;
-            scrollbar-width: none;
-            /* Firefox */
-            -ms-overflow-style: none;
-            /* IE 10+ */
         }
-
-        .sidebar::-webkit-scrollbar {
-            display: none;
-            /* Chrome, Safari, Opera */
-        }
-
         .time {
             text-align: left;
         }
+        .igmf{
+            width: 100%;
+            margin: 0 auto;
 
-        /* Ẩn thanh cuộn mặc định */
-        .container::-webkit-scrollbar {
-            display: none;
         }
 
-        .main-content::-webkit-scrollbar,
-        .sidebar::-webkit-scrollbar {
-            width: 10px;
+        .img-full img{
+            width: 100%;
+            height: 100%;
         }
 
-        .main-content::-webkit-scrollbar-thumb,
-        .sidebar::-webkit-scrollbar-thumb {
-            background: #888;
+        .sbsl{
+            width: 100%;
+            margin-top: 30px;
+            height: 800px;
+
+        }
+        .bg-tab{
+            width: 100%;
+            border-top-right-radius: 60px;
+            border-top-left-radius: 60px;
         }
 
-        .main-content::-webkit-scrollbar-thumb:hover,
-        .sidebar::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
+
     </style>
 </head>
 
@@ -94,79 +72,75 @@
     {{-- Main --}}
     <div class="container2">
         <main class="main-content">
+            <h2>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch</h2>
+            <div class="time">11:15 Chủ Nhật, 23/06/2024</div>
+            <h4>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó
+                vươn tầm trong tương lai gần.</h4>
+            <img src="/client/image/i1.jpg" alt="">
+            <p>Sáu tháng đầu năm 2024 đang chứng kiến sự tụt dốc khá rõ của bóng đá Việt Nam khi chúng ta mất đi vị thế
+                đứng đầu khu vực và rơi rất sâu trên BXH FIFA, xuống hạng 116 thế giới. Sau 7 năm, Những chiến binh Sao
+                Vàng mới ở tình cảnh thê thảm đến thế kể từ tháng 11/2017. Một trong các nguyên nhân lớn dẫn đến sự đi
+                xuống của môn thể thao vua tại dải đất hình chữ S chính là việc chưa thể bắt kịp xu hướng chung của thế
+                giới ở 2 vấn đề gồm xuất ngoại và nhập tịch cầu thủ.
 
+                Gian nan xuất ngoại...
+
+                Giai đoạn của năm 2022, bóng đá Việt Nam hứng khởi khi Nguyễn Quang Hải rồi sau đó là Nguyễn Văn Toàn
+                cùng Nguyễn Công Phượng đồng loạt xuất ngoại. Trước đó, những cái tên khác như Lương Xuân Trường, Nguyễn
+                Tuấn Anh hay Đoàn Văn Hậu cũng đã có những trải nghiệm tốt ở các CLB nước ngoài. Thế nhưng, những kỳ
+                vọng về một làn sóng vươn ra biển lớn đã không đến khi các cầu thủ không tìm được chỗ đứng tại đội bóng
+                mới. Họ gần như mất hút, dự bị hoặc thi đấu rất ít.
+
+                bong-da-viet-nam-gian-nan-xuat-ngoai-ho-hung-nhap-tich
+                Hoàng Đức và Tuấn Hải khó xuất ngoại.
+                Để rồi, trong thời gian vừa qua, đã có những thông tin về việc 3 cầu thủ hàng đầu của bóng đá Việt Nam
+                hiện tại gồm Nguyễn Quang Hải, Phạm Tuấn Hải hay Nguyễn Hoàng Đức sẽ ra nước ngoài thi đấu. Tuy vậy,
+                viễn cảnh trên dường như sẽ không đến khi 3 ngôi sao của ĐT Việt Nam chọn giải pháp an toàn là gắn bó
+                với các CLB tại V.League. Rõ ràng, thất bại của người đi trước đang khiến họ phải chùn bước. Nó cũng chỉ
+                ra những hạn chế của cầu thủ Việt Nam trong việc tiếp cận với thế giới.
+
+
+                Nói về việc xuất ngoại của cầu thủ Việt Nam, nhà môi giới người Slovenia - Jernej Kamensek cho biết trên
+                Bongdaplus: "Có một thực tế cần phải bàn là cầu thủ Việt Nam đang nhận chế độ quá cao so với năng lực
+                thực tế của họ. Các CLB nước ngoài sẽ không thể trả được con số như vậy. Một cầu thủ giỏi của Việt Nam
+                nhận lương gấp 10 lần so với con số thực tế về lương mà các đội bóng ở nước ngoài có thể chi trả. Đó
+                cũng là một phần lý do khiến cho cầu thủ Việt Nam ít xuất ngoại. Hay ngược lại, các CLB nước ngoài chưa
+                quan tâm đúng mực đến thị trường Việt Nam”.
+
+                ...hờ hững nhập tịch
+
+                Gian nan với bài toán xuất ngoại, bóng đá Việt Nam ở thời điểm hiện tại cũng không quá quan tâm đến vấn
+                đề nhập tịch cho những nhân tố Việt kiều hay các cầu thủ ngoại chất lượng có nguyện vọng cống hiến cho
+                ĐTQG. Bằng chứng là ngoài Nguyễn Filip và Đặng Văn Lâm, chưa có nhiều những gương mặt nước ngoài được
+                góp mặt trong thành phần của Những chiến binh Sao Vàng.
+
+                Liên đoàn Bóng đá Việt Nam (VFF) từng cho biết họ sẵn sàng tạo điều kiện để các nhân tố Việt kiều được
+                cống hiến cho dải đất hình chữ S. Nói là một chuyện nhưng trên thực tế, họ chưa hề có những giải pháp để
+                thu hút tài năng giống như cách mà Thái Lan hay Indonesia đang làm trong suốt thời gian qua.</p>
         </main>
 
         <aside class="sidebar">
-            <h3>Sidebar</h3>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
-            <p>Thông tin phụ...</p>
+            <div class="img-full">
+                <img src="/client/image/r.jpg">
+            </div>
+            <div class="sbsl bg-primary">
+                <div class="bg-tab img-full">
+                    <img src="/client/image/bg-tab.webp" alt="">
+                </div>
+            </div>
         </aside>
     </div>
 
     {{-- Footer --}}
-    <footer class="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3>Recent Posts</h3>
-                    <ul>
-                        <li><a href="#">Post 1</a></li>
-                        <li><a href="#">Post 2</a></li>
-                        <li><a href="#">Post 3</a></li>
-                        <!-- Add more recent posts here -->
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="#">Category 1</a></li>
-                        <li><a href="#">Category 2</a></li>
-                        <li><a href="#">Category 3</a></li>
-                        <!-- Add more categories here -->
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h3>Tags</h3>
-                    <ul class="tag-cloud">
-                        <li><a href="#">Tag 1</a></li>
-                        <li><a href="#">Tag 2</a></li>
-                        <li><a href="#">Tag 3</a></li>
-                        <!-- Add more tags here -->
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </footer>
+
+    @include('layout.footer')
 
 </body>
 
 </html>
 
 
-<script>
+{{-- <script>
     document.addEventListener('DOMContentLoaded', function() {
         const mainContent = document.getElementById('mainContent');
         const sidebar = document.getElementById('sidebar');
@@ -199,4 +173,4 @@
         mainContent.addEventListener('scroll', checkScroll);
         sidebar.addEventListener('scroll', checkScroll);
     });
-</script>
+</script> --}}

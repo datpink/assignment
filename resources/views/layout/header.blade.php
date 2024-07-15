@@ -10,7 +10,9 @@
                 </div>
             </div>
             <div class="col-lg-4 text-center logo">
-                <img src="/client/image/logo.webp" alt="Logo">
+                <a href="/">
+                    <img src="/client/image/logo.webp" alt="Logo">
+                </a>
             </div>
             <div class="col-lg-4 text-center">
                 <img src="https://th.bing.com/th/id/OIP.2hAVCZRMcBjsE8AGQfWCVQHaHa?rs=1&pid=ImgDetMain"
