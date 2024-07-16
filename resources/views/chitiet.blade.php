@@ -11,47 +11,6 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 
     <style>
-        .container2 {
-            width: 70%;
-            margin: 0 auto;
-            display: flex;
-        }
-        .main-content {
-            padding: 20px;
-            background-color: #f0f0f0;
-            width: 70%
-        }
-        .sidebar {
-            width: 30%;
-            padding: 20px;
-            background-color: #e0e0e0;
-            height: 100%;
-        }
-        .time {
-            text-align: left;
-        }
-        .igmf{
-            width: 100%;
-            margin: 0 auto;
-
-        }
-
-        .img-full img{
-            width: 100%;
-            height: 100%;
-        }
-
-        .sbsl{
-            width: 100%;
-            margin-top: 30px;
-            height: 800px;
-
-        }
-        .bg-tab{
-            width: 100%;
-            border-top-right-radius: 60px;
-            border-top-left-radius: 60px;
-        }
 
 
     </style>
@@ -123,10 +82,71 @@
             <div class="img-full">
                 <img src="/client/image/r.jpg">
             </div>
-            <div class="sbsl bg-primary">
-                <div class="bg-tab img-full">
-                    <img src="/client/image/bg-tab.webp" alt="">
+            <div class="sbsl ">
+                <div class="bg-tab img-full" style="background-image: url('/client/image/bg-tab.webp')">
+                    <h4> TIN NÓNG</h4>
                 </div>
+                <div class="cte row">
+                    <div class="col-lg-4 img-cte">
+                        <img src="/client/image/im1.webp" alt="News Image 1">
+                    </div>
+                    <div class="col-lg-8 text-cte">
+                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
+                        <div class="time">26/7/2024</div>
+                    </div>
+
+                </div>
+                <div class="cte row">
+                    <div class="col-lg-4 img-cte">
+                        <img src="/client/image/im1.webp" alt="News Image 1">
+                    </div>
+                    <div class="col-lg-8 text-cte">
+                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
+                        <div class="time">26/7/2024</div>
+                    </div>
+
+                </div>
+                <div class="cte row">
+                    <div class="col-lg-4 img-cte">
+                        <img src="/client/image/im1.webp" alt="News Image 1">
+                    </div>
+                    <div class="col-lg-8 text-cte">
+                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
+                        <div class="time">26/7/2024</div>
+                    </div>
+
+                </div>
+                <div class="cte row">
+                    <div class="col-lg-4 img-cte">
+                        <img src="/client/image/im1.webp" alt="News Image 1">
+                    </div>
+                    <div class="col-lg-8 text-cte">
+                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
+                        <div class="time">26/7/2024</div>
+                    </div>
+
+                </div>
+                <div class="cte row">
+                    <div class="col-lg-4 img-cte">
+                        <img src="/client/image/im1.webp" alt="News Image 1">
+                    </div>
+                    <div class="col-lg-8 text-cte">
+                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
+                        <div class="time">26/7/2024</div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="sbsl">
+                <div class="bg-tab img-full" style="background-image: url('/client/image/bg-tab.webp')">
+                    <h4> TIN MỚI NHẤT</h4>
+                </div>
+                <div class="cte2 bg-primary" style="height: 400px;background-image: url('/client/image/bg-tab.webp') " >
+                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
+                    <hr>
+                </div>
+
             </div>
         </aside>
     </div>
@@ -138,39 +158,3 @@
 </body>
 
 </html>
-
-
-{{-- <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const mainContent = document.getElementById('mainContent');
-        const sidebar = document.getElementById('sidebar');
-        const footer = document.getElementById('footer');
-
-        function checkScroll() {
-            // Lấy chiều cao của main-content và sidebar
-            const mainHeight = mainContent.scrollHeight;
-            const sidebarHeight = sidebar.scrollHeight;
-
-            // Lấy chiều cao của cửa sổ viewport
-            const viewportHeight = window.innerHeight;
-
-            // Lấy vị trí scroll hiện tại của main-content và sidebar
-            const mainScroll = mainContent.scrollTop;
-            const sidebarScroll = sidebar.scrollTop;
-
-            // Tính tổng chiều cao cần scroll
-            const totalScroll = mainHeight + sidebarHeight - viewportHeight;
-
-            // Nếu đã scroll đến cuối cùng thì hiển thị footer
-            if (mainScroll + sidebarScroll >= totalScroll) {
-                footer.style.display = 'block';
-            } else {
-                footer.style.display = 'none';
-            }
-        }
-
-        // Thêm sự kiện scroll cho main-content và sidebar
-        mainContent.addEventListener('scroll', checkScroll);
-        sidebar.addEventListener('scroll', checkScroll);
-    });
-</script> --}}
