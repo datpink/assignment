@@ -17,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('master');
 });
+Route::get('tk', function () {
+    return view('timkiem');
+});
 Route::get('chitiet/{id}',[TinController::class,'find']);

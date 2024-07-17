@@ -12,19 +12,23 @@ header {
 
 .social-icons a {
     color: white;
-    margin-right: 15px; /* Để tạo khoảng cách giữa các biểu tượng */
-    font-size: 24px; /* Kích thước của biểu tượng */
+    margin-right: 15px;
+    /* Để tạo khoảng cách giữa các biểu tượng */
+    font-size: 24px;
+    /* Kích thước của biểu tượng */
 }
 
 .ic {
     width: 25px;
     height: 25px;
-    border-radius: 50%; /* Làm cho hình ảnh thành hình tròn */
+    border-radius: 50%;
+    /* Làm cho hình ảnh thành hình tròn */
     border: 2px solid white;
 }
 
 .logo img {
-    max-height: 56px; /* Đặt chiều cao tối đa cho logo */
+    max-height: 56px;
+    /* Đặt chiều cao tối đa cho logo */
     margin: auto;
 }
 
@@ -35,15 +39,19 @@ header {
 nav {
     background-color: #242424;
     position: sticky;
-    top: 0; /* Đặt vị trí top = 0 để ghim cố định navbar trên đỉnh trang */
-    z-index: 1000; /* Đảm bảo navbar hiển thị trên các phần tử khác trên trang */
-    width: 100%; /* Chiều rộng 100% để giãn ra cả chiều ngang */
+    top: 0;
+    /* Đặt vị trí top = 0 để ghim cố định navbar trên đỉnh trang */
+    z-index: 1000;
+    /* Đảm bảo navbar hiển thị trên các phần tử khác trên trang */
+    width: 100%;
+    /* Chiều rộng 100% để giãn ra cả chiều ngang */
 }
 
 .navbar-nav {
     display: flex;
     justify-content: center;
-    flex-direction: row; /* Đảm bảo các thẻ li nằm ngang */
+    flex-direction: row;
+    /* Đảm bảo các thẻ li nằm ngang */
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -59,7 +67,8 @@ nav {
     display: block;
     padding: 10px;
     text-decoration: none;
-    position: relative; /* Đặt vị trí tương đối để submenu có thể hiển thị */
+    position: relative;
+    /* Đặt vị trí tương đối để submenu có thể hiển thị */
 }
 
 .submenu {
@@ -72,11 +81,13 @@ nav {
     margin: 0;
     background-color: #fff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    z-index: 1000; /* Đảm bảo submenu hiển thị phía trên */
+    z-index: 1000;
+    /* Đảm bảo submenu hiển thị phía trên */
 }
 
 .submenu .nav-item {
-    width: 200px; /* Đảm bảo chiều rộng phù hợp cho các mục con */
+    width: 200px;
+    /* Đảm bảo chiều rộng phù hợp cho các mục con */
 }
 
 .submenu .nav-link {
@@ -98,27 +109,38 @@ nav {
 /* CSS cho cụm banner */
 .banner {
     display: flex;
-    align-items: center; /* Căn giữa theo chiều dọc */
+    align-items: center;
+    /* Căn giữa theo chiều dọc */
 }
 
 .banner .col-lg-6,
 .banner .col-lg-3 {
-    padding: 0; /* Loại bỏ padding để hình ảnh không bị lệch */
-    overflow: hidden; /* Đảm bảo phần ảnh phóng to không vượt ra ngoài khung */
-    position: relative; /* Đảm bảo các ảnh không vượt quá khung khi phóng to */
+    padding: 0;
+    /* Loại bỏ padding để hình ảnh không bị lệch */
+    overflow: hidden;
+    /* Đảm bảo phần ảnh phóng to không vượt ra ngoài khung */
+    position: relative;
+    /* Đảm bảo các ảnh không vượt quá khung khi phóng to */
 }
 
 .banner img {
-    width: 100%; /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của phần tử cha */
-    height: 100%; /* Đảm bảo chiều cao đồng nhất cho tất cả các ảnh */
-    object-fit: cover; /* Đảm bảo hình ảnh không bị biến dạng */
-    display: block; /* Loại bỏ khoảng cách dưới hình ảnh */
-    transition: transform 0.3s ease; /* Thêm hiệu ứng chuyển đổi mượt mà */
-    max-height: 300px; /* Chiều cao tối đa cho các ảnh, điều chỉnh theo nhu cầu */
+    width: 100%;
+    /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của phần tử cha */
+    height: 100%;
+    /* Đảm bảo chiều cao đồng nhất cho tất cả các ảnh */
+    object-fit: cover;
+    /* Đảm bảo hình ảnh không bị biến dạng */
+    display: block;
+    /* Loại bỏ khoảng cách dưới hình ảnh */
+    transition: transform 0.3s ease;
+    /* Thêm hiệu ứng chuyển đổi mượt mà */
+    max-height: 300px;
+    /* Chiều cao tối đa cho các ảnh, điều chỉnh theo nhu cầu */
 }
 
 .banner img:hover {
-    transform: scale(1.1); /* Phóng to ảnh lên 10% khi hover */
+    transform: scale(1.1);
+    /* Phóng to ảnh lên 10% khi hover */
 }
 
 
@@ -131,8 +153,10 @@ nav {
 }
 
 .featured-news-title {
-    margin-top: 10px; /* Khoảng cách trên tiêu đề tin tức */
-    font-weight: bold; /* Độ đậm của tiêu đề */
+    margin-top: 10px;
+    /* Khoảng cách trên tiêu đề tin tức */
+    font-weight: bold;
+    /* Độ đậm của tiêu đề */
 }
 
 .featured-news-container {
@@ -142,15 +166,18 @@ nav {
     max-width: 70%;
     margin: 0 auto;
     padding: 10px;
-    overflow-x: auto; /* Cho phép cuộn ngang khi cần thiết */
+    overflow-x: auto;
+    /* Cho phép cuộn ngang khi cần thiết */
 }
 
 .featured-news {
     flex: 0 0 30%;
     text-align: center;
     padding: 20px;
-    flex-shrink: 0; /* Ngăn các phần tử con co lại quá nhiều */
-    max-width: 25%; /* Giới hạn chiều rộng tối đa của mỗi phần tử */
+    flex-shrink: 0;
+    /* Ngăn các phần tử con co lại quá nhiều */
+    max-width: 25%;
+    /* Giới hạn chiều rộng tối đa của mỗi phần tử */
 }
 
 .featured-news img {
@@ -161,10 +188,11 @@ nav {
 
 .featured-news-title {
     margin-top: 10px;
-    font-weight:500;
+    font-weight: 500;
     font-size: small;
     text-align: left;
 }
+
 .time {
     text-align: left;
     font-size: 10px;
@@ -191,12 +219,13 @@ nav {
 }
 
 
-.bna{
+.bna {
     width: 70%;
     margin: 0 auto;
     margin-top: 30px;
 }
-.bna img{
+
+.bna img {
     width: 100%;
 }
 
@@ -244,6 +273,7 @@ nav {
 .tag-cloud li a:hover {
     color: #fff;
 }
+
 /* Trang chi tiết */
 .container2 {
     width: 70%;
@@ -305,7 +335,8 @@ nav {
     margin: 0 auto;
     margin-top: 20px;
 }
-.img-cte{
+
+.img-cte {
     width: 95%;
     margin: 0 auto;
     text-align: left;
@@ -313,15 +344,18 @@ nav {
     padding: 0;
     height: 70px;
 }
-.img-cte img{
+
+.img-cte img {
     height: 100%;
     width: 100%;
 }
-.text-cte{
+
+.text-cte {
     font-size: 13px;
     font-weight: 500;
 }
-.text-cte p{
+
+.text-cte p {
     padding: 0;
     margin: 0;
 }
@@ -330,10 +364,14 @@ nav {
     width: 100%;
     margin: 0 auto;
     margin-top: 20px;
-    position: relative; /* Đảm bảo lớp phủ được đặt chính xác */
-    background-size: cover; /* Đảm bảo ảnh nền bao phủ toàn bộ div */
-    background-position: center; /* Đảm bảo ảnh nền nằm ở giữa */
-    overflow: hidden; /* Đảm bảo lớp phủ không vượt ra ngoài div */
+    position: relative;
+    /* Đảm bảo lớp phủ được đặt chính xác */
+    background-size: cover;
+    /* Đảm bảo ảnh nền bao phủ toàn bộ div */
+    background-position: center;
+    /* Đảm bảo ảnh nền nằm ở giữa */
+    overflow: hidden;
+    /* Đảm bảo lớp phủ không vượt ra ngoài div */
 }
 
 .cte2::before {
@@ -343,13 +381,80 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.7); /* Màu đen với độ trong suốt 50% */
-    z-index: 1; /* Đảm bảo lớp phủ nằm trên ảnh nền */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Màu đen với độ trong suốt 50% */
+    z-index: 1;
+    /* Đảm bảo lớp phủ nằm trên ảnh nền */
 }
 
 .cte2 p {
-    position: relative; /* Đảm bảo nội dung nằm trên lớp phủ */
-    z-index: 2; /* Đảm bảo nội dung nằm trên lớp phủ */
-    color: white; /* Đặt màu chữ là trắng để dễ đọc trên nền đen */
-    padding: 20px; /* Tạo khoảng cách giữa nội dung và các cạnh của div */
+    position: relative;
+    /* Đảm bảo nội dung nằm trên lớp phủ */
+    z-index: 2;
+    /* Đảm bảo nội dung nằm trên lớp phủ */
+    color: white;
+    /* Đặt màu chữ là trắng để dễ đọc trên nền đen */
+    padding: 10px;
+    /* Tạo khoảng cách giữa nội dung và các cạnh của div */
+    font-size: 17px;
+}
+
+.cte2 p:hover {
+    color: red;
+}
+
+.cte2 hr {
+    border: 1px solid white;
+    /* Đặt màu viền cho thẻ hr */
+}
+
+.tk{
+    width: 75%;
+    margin: 0 auto;
+    padding: 0;
+}
+.tk .col-lg-3{
+    padding: 0;
+}
+.htbg {
+    width: 100%;
+    margin: 0 auto;
+    height: 70px;
+    background-size: 100% 100%;
+    align-items: center;
+    display: flex;
+    margin-bottom: 30px;
+    padding: 0;
+}
+.kun{
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.htbg h4 {
+    color: white;
+    margin-left: 15px;
+}
+.img-tk{
+    height: 170px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+    position: relative;
+}
+.img-tk img{
+    width: 90%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+
+.img-tk:hover img {
+    transform: scale(1.1); /* Phóng to ảnh khi hover */
+}
+
+.text-tk{
+    margin-top: 20px;
 }

@@ -142,10 +142,18 @@
                 <div class="bg-tab img-full" style="background-image: url('/client/image/bg-tab.webp')">
                     <h4> TIN MỚI NHẤT</h4>
                 </div>
-                <div class="cte2 bg-primary" style="height: 400px;background-image: url('/client/image/bg-tab.webp') " >
+                <div class="cte2 bg-primary" style="background-image: url('/client/image/i1.jpg') " >
                     <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
                     <hr>
+                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
+                    <hr>
+                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
+                    <hr>
+                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
+                    <hr>
+                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
                 </div>
+
 
             </div>
         </aside>
