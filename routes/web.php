@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
+
 Route::get('tk', function () {
     return view('timkiem');
 });
+Route::get('/', function () {
+    return view('tin-trong-loai');
+});
+Route::get('index',[TinController::class,'index'])->name('home');
 Route::get('chitiet/{id}',[TinController::class,'find']);
+
