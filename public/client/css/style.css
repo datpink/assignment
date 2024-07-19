@@ -16,7 +16,7 @@ a.link h4, a.link p {
 
 /* Khi hover vào thẻ <a>, giữ màu chữ đen cho các thẻ con bên trong */
 a.link:hover h4, a.link:hover p {
-    color: black;
+    color: rgb(255, 0, 0);
 }
 
 header {
@@ -403,8 +403,12 @@ nav {
 .text-cte p {
     padding: 0;
     margin: 0;
+    line-height: 17px;
 }
 
+.cte .col-lg-8{
+    padding-right: 0px;
+}
 .cte2 {
     width: 100%;
     margin: 0 auto;

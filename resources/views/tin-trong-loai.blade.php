@@ -33,7 +33,7 @@
         <main class="main-content">
             <div class="ttl">
                 <div class="htbg" style="background-image: url('/client/image/bg-tab.webp')">
-                    <h4>Tin trong loại</h4>
+                    <h4>{{ $loaiTin->name }}</h4>
                 </div>
                 @if ($listTin->isNotEmpty())
                     @foreach ($listTin as $lt)

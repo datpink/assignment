@@ -67,46 +67,24 @@
                     </div>
 
                 </div>
-                <div class="cte row">
-                    <div class="col-lg-4 img-cte">
-                        <img src="/client/image/im1.webp" alt="News Image 1">
-                    </div>
-                    <div class="col-lg-8 text-cte">
-                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
-                        <div class="time">26/7/2024</div>
-                    </div>
-
-                </div>
-                <div class="cte row">
-                    <div class="col-lg-4 img-cte">
-                        <img src="/client/image/im1.webp" alt="News Image 1">
-                    </div>
-                    <div class="col-lg-8 text-cte">
-                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
-                        <div class="time">26/7/2024</div>
-                    </div>
-
-                </div>
-                <div class="cte row">
-                    <div class="col-lg-4 img-cte">
-                        <img src="/client/image/im1.webp" alt="News Image 1">
-                    </div>
-                    <div class="col-lg-8 text-cte">
-                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
-                        <div class="time">26/7/2024</div>
-                    </div>
-
-                </div>
-                <div class="cte row">
-                    <div class="col-lg-4 img-cte">
-                        <img src="/client/image/im1.webp" alt="News Image 1">
-                    </div>
-                    <div class="col-lg-8 text-cte">
-                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
-                        <div class="time">26/7/2024</div>
-                    </div>
-
-                </div>
+                @foreach ($hot as $ht)
+                    @php
+                        $image = $ht->getFirstImage();
+                    @endphp
+                    <a href="{{ route('chitiet', ['id' => $ht->id]) }}" class="link">
+                        <div class="cte row">
+                            <div class=" col-lg-4 img-cte">
+                                @if ($image)
+                                    <img src="{{ $image->image_path }}" alt="Featured Image">
+                                @endif
+                            </div>
+                            <div class="col-lg-8 text-cte">
+                                <p>{{ $ht->title }}</p>
+                                <div class="time">{{ $ht->created_at }}</div>
+                            </div>
+                        </div>
+                    </a>
+                @endforeach
 
             </div>
             <div class="sbsl">

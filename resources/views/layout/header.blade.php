@@ -4,9 +4,9 @@
             <div class="col-lg-4 text-center">
                 <div class="social-icons justify-content-center">
                     <a href="#"><img class="ic" src="/client/image/face.jpg" alt="Facebook"></a>
-                    <a href="#"><img class="ic" src="/client/image/face.jpg" alt="Instagram"></a>
-                    <a href="#"><img class="ic" src="/client/image/face.jpg" alt="YouTube"></a>
-                    <a href="#"><img class="ic" src="/client/image/face.jpg" alt="Google"></a>
+                    <a href="#"><img class="ic" src="/client/image/go.jpg" alt="Instagram"></a>
+                    <a href="#"><img class="ic" src="/client/image/yo.jpg" alt="YouTube"></a>
+                    <a href="#"><img class="ic" src="/client/image/yo.jpg" alt="Google"></a>
                 </div>
             </div>
             <div class="col-lg-4 text-center logo">
