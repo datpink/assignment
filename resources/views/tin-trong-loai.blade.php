@@ -35,70 +35,30 @@
                 <div class="htbg" style="background-image: url('/client/image/bg-tab.webp')">
                     <h4>Tin trong loại</h4>
                 </div>
-                <div class="kun2 row">
-                    <div class=" col-lg-3 img-ttl">
-                        <img src="/client/image/i1.jpg" alt="">
+                @if ($listTin->isNotEmpty())
+                    @foreach ($listTin as $lt)
+                        @php
+                            $image = $lt->getFirstImage();
+                        @endphp
+                        <a href="{{ route('chitiet', ['id' => $lt->id]) }}" class="link">
+                            <div class="kun2 row">
+                                <div class=" col-lg-3 img-ttl">
+                                    @if ($image)
+                                        <img src="{{ $image->image_path }}" alt="Featured Image">
+                                    @endif
+                                </div>
+                                <div class="col-lg-9 text-ttl">
+                                    <h4>{{ $lt->title }}</h4>
+                                    <p>{{ $lt->content }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    @endforeach
+                @else
+                    <div class="nothing" style="width: 100% ;margin: 0 auto; color: red">
+                        <p>Không có tin nào</p>
                     </div>
-                    <div class="col-lg-9 text-ttl">
-                        <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                        <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-                    </div>
-                </div>
-                <div class="kun2 row">
-                    <div class=" col-lg-3 img-ttl">
-                        <img src="/client/image/i1.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 text-ttl">
-                        <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                        <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-                    </div>
-                </div>
-                <div class="kun2 row">
-                    <div class=" col-lg-3 img-ttl">
-                        <img src="/client/image/i1.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 text-ttl">
-                        <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                        <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-                    </div>
-                </div>
-                <div class="kun2 row">
-                    <div class=" col-lg-3 img-ttl">
-                        <img src="/client/image/i1.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 text-ttl">
-                        <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                        <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-                    </div>
-                </div>
-                <div class="kun2 row">
-                    <div class=" col-lg-3 img-ttl">
-                        <img src="/client/image/i1.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 text-ttl">
-                        <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                        <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-                    </div>
-                </div>
-                <div class="kun2 row">
-                    <div class=" col-lg-3 img-ttl">
-                        <img src="/client/image/i1.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 text-ttl">
-                        <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                        <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-                    </div>
-                </div>
-                <div class="kun2 row">
-                    <div class=" col-lg-3 img-ttl">
-                        <img src="/client/image/i1.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 text-ttl">
-                        <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                        <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-                    </div>
-                </div>
-
+                @endif
             </div>
         </main>
 
@@ -166,7 +126,7 @@
                 <div class="bg-tab img-full" style="background-image: url('/client/image/bg-tab.webp')">
                     <h4> TIN MỚI NHẤT</h4>
                 </div>
-                <div class="cte2 bg-primary" style="background-image: url('/client/image/i1.jpg') " >
+                <div class="cte2 bg-primary" style="background-image: url('/client/image/i1.jpg') ">
                     <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
                     <hr>
                     <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>

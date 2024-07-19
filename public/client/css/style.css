@@ -1,3 +1,24 @@
+/* Đặt màu chữ đen cho tất cả các thẻ <a> có class 'link' */
+a.link {
+    color: black;
+    text-decoration: none; /* Loại bỏ gạch chân */
+}
+
+/* Đặt màu chữ đen cho các thẻ con bên trong thẻ <a> */
+a.link h4, a.link p {
+    color: black;
+}
+
+/* Khi hover vào thẻ <a>, thêm đổ bóng */
+.link:hover {
+    box-shadow: 0px 8px 16px rgba(249, 9, 9, 0.3) !important;
+}
+
+/* Khi hover vào thẻ <a>, giữ màu chữ đen cho các thẻ con bên trong */
+a.link:hover h4, a.link:hover p {
+    color: black;
+}
+
 header {
     background-color: #000000;
     height: 80px;
@@ -282,27 +303,51 @@ nav {
 }
 
 .main-content {
-    padding: 20px;
+    padding: 10px;
     background-color: #f0f0f0;
     width: 70%
 }
-
+.main-content h2{
+    padding: 0;
+}
+.img-ct{
+    min-height: 400px;
+    width: 100%;
+}
+.img-ct img{
+    width: 100%;
+    height: 100%;
+}
 .sidebar {
     width: 30%;
     padding: 20px;
     background-color: #e0e0e0;
     height: 100%;
 }
-
+.ct-ct{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 .time {
     text-align: left;
 }
-
+.time-main {
+    font-size: 15px;
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+.time-main p{
+    margin-top: 14px;
+    padding: 5px 15px 5px 5px;
+    font-weight: 500;
+}
 .igmf {
     width: 100%;
     margin: 0 auto;
 
 }
+
 
 .img-full img {
     width: 100%;
@@ -412,6 +457,7 @@ nav {
     width: 75%;
     margin: 0 auto;
     padding: 0;
+    min-height: 800px;
 }
 .tk .col-lg-3{
     padding: 0;

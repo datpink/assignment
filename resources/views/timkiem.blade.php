@@ -32,65 +32,29 @@
 
     <div class="tk">
         <div class="htbg" style="background-image: url('/client/image/bg-tab.webp')">
-            <h4>Từ khóa tìm kiếm: ..</h4>
+            <h4>Từ khóa tìm kiếm:</h4>
             <form action="">
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" value="{{ $keyword }}">
             </form>
         </div>
-        <div class="kun row">
-            <div class=" col-lg-3 img-tk">
-                <img src="/client/image/i1.jpg" alt="">
-            </div>
-            <div class="col-lg-9 text-tk">
-                <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-            </div>
-        </div>
-        <div class="kun row">
-            <div class=" col-lg-3 img-tk">
-                <img src="/client/image/i1.jpg" alt="">
-            </div>
-            <div class="col-lg-9 text-tk">
-                <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-            </div>
-        </div>
-        <div class="kun row">
-            <div class=" col-lg-3 img-tk">
-                <img src="/client/image/i1.jpg" alt="">
-            </div>
-            <div class="col-lg-9 text-tk">
-                <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-            </div>
-        </div>
-        <div class="kun row">
-            <div class=" col-lg-3 img-tk">
-                <img src="/client/image/i1.jpg" alt="">
-            </div>
-            <div class="col-lg-9 text-tk">
-                <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-            </div>
-        </div>
-        <div class="kun row">
-            <div class=" col-lg-3 img-tk">
-                <img src="/client/image/i1.jpg" alt="">
-            </div>
-            <div class="col-lg-9 text-tk">
-                <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-            </div>
-        </div>
-        <div class="kun row">
-            <div class=" col-lg-3 img-tk">
-                <img src="/client/image/i1.jpg" alt="">
-            </div>
-            <div class="col-lg-9 text-tk">
-                <h4>Bóng đá Việt Nam: Gian nan xuất ngoại, hờ hững nhập tịch trong những năm gần đây</h4>
-                <p>Một khi chưa có những chính sách tốt cho vấn đề xuất ngoại và nhập tịch cầu thủ, bóng đá Việt Nam sẽ khó vươn tầm trong tương lai gần.</p>
-            </div>
-        </div>
+        @foreach ($articles as $article)
+            <a href="{{ route('chitiet', ['id' => $article->id]) }}" class="link">
+                <div class="kun row">
+                    @php
+                        $image = $article->getFirstImage();
+                    @endphp
+                    <div class=" col-lg-3 img-tk">
+                        @if ($image)
+                            <img src="{{ $image->image_path }}" alt="Featured Image">
+                        @endif
+                    </div>
+                    <div class="col-lg-9 text-tk">
+                        <h4>{{ $article->title }}</h4>
+                        <p>{{ $article->content }}</p>
+                    </div>
+                </div>
+            </a>
+        @endforeach
 
 
     </div>

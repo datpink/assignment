@@ -19,7 +19,6 @@ return new class extends Migration
             $table->text('content')->nullable(); // Lưu nội dung văn bản
             $table->string('image_path')->nullable(); // Lưu đường dẫn hình ảnh
             $table->unsignedInteger('order'); // Thứ tự của phần trong bài viết
-            $table->timestamps();
         });
     }
 
