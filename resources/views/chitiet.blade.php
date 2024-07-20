@@ -24,7 +24,6 @@
 
     <div class="container2">
         <main class="main-content">
-
             @php
                 $user = DB::table('users')
                     ->select('name')
@@ -35,7 +34,7 @@
             <div class="time-main">
                 <p>{{ $user->name }}</p><em>{{ $article->created_at }}</em>
             </div>
-            <h4>{{ $article->content }}</h4>
+            <p class="content-p">{{ $article->content }}</h4>
             @foreach ($article->parts as $part)
                 <div>
                     @if ($part->type == 'text')
@@ -47,6 +46,27 @@
                     @endif
                 </div>
             @endforeach
+            <div class="tcl">
+                <div class="tcl-bg" style="background-image: url('/client/image/bg-tab.webp')">
+                    <h5>Tin cùng danh mục</h5>
+                </div>
+                <div class="tcl-tin">
+                    @foreach ($cungloai as $ht)
+                        @php
+                            $image = $ht->getFirstImage();
+                        @endphp
+
+                        <div class="tcl-new bong">
+                            <a href="{{ route('chitiet', ['id' => $ht->id]) }}">
+                                @if ($image)
+                                    <img src="{{ $image->image_path }}" alt="Image">
+                                @endif
+                                <p>{{ $ht->title }}</p>
+                            </a>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </main>
 
         <aside class="sidebar">
@@ -57,22 +77,13 @@
                 <div class="bg-tab img-full" style="background-image: url('/client/image/bg-tab.webp')">
                     <h4> TIN NÓNG</h4>
                 </div>
-                <div class="cte row">
-                    <div class="col-lg-4 img-cte">
-                        <img src="/client/image/im1.webp" alt="News Image 1">
-                    </div>
-                    <div class="col-lg-8 text-cte">
-                        <p>Champions League 2024: Real Madrid vô địch thế nào?</p>
-                        <div class="time">26/7/2024</div>
-                    </div>
-
-                </div>
                 @foreach ($hot as $ht)
                     @php
                         $image = $ht->getFirstImage();
                     @endphp
                     <a href="{{ route('chitiet', ['id' => $ht->id]) }}" class="link">
-                        <div class="cte row">
+
+                        <div class="cte row bong">
                             <div class=" col-lg-4 img-cte">
                                 @if ($image)
                                     <img src="{{ $image->image_path }}" alt="Featured Image">
@@ -92,15 +103,12 @@
                     <h4> TIN MỚI NHẤT</h4>
                 </div>
                 <div class="cte2 bg-primary" style="background-image: url('/client/image/i1.jpg') ">
-                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
-                    <hr>
-                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
-                    <hr>
-                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
-                    <hr>
-                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
-                    <hr>
-                    <p class="sb-bgbl">Hai nền tảng mà Flick muốn dựa vào để xây dựng Barca</p>
+                    @foreach ($tinmoi as $tm)
+                        <a href="{{ route('chitiet', ['id' => $ht->id]) }}" class="link2">
+                            <p class="sb-bgbl">{{ $tm->title }}</p>
+                        </a>
+                        <hr>
+                    @endforeach
                 </div>
 
 

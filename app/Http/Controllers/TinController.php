@@ -11,7 +11,13 @@ class TinController extends Controller
 {
     public function index()
     {
-        return view("master");
+        $tinnb = Article::with(['parts' => function ($query) {
+            $query->orderBy('order', 'desc');
+        }])
+            ->where('featured', '=', '1')
+            ->limit('10')
+            ->get();
+        return view("master", compact("tinnb"));
     }
 
     public function find($id)
@@ -26,7 +32,25 @@ class TinController extends Controller
             ->orderBy('view_count', 'desc')
             ->limit(5)
             ->get();
-        return view('chitiet', compact('article', 'hot'));
+
+        $product = Article::find($id);
+
+        // Lấy ra category_id từ sản phẩm
+        $categoryId = $product->category_id;
+        $cungloai = Article::with(['parts' => function ($query) {
+            $query->orderBy('order', 'desc');
+        }])
+            ->where('category_id', '=', $categoryId)
+            ->orderBy('view_count', 'desc')
+            ->limit(5)
+            ->get();
+
+        $tinmoi = DB::table('articles')
+            ->orderBy('created_at', 'desc')
+            ->limit('5')
+            ->get();
+
+        return view('chitiet', compact('article', 'hot', 'tinmoi','cungloai'));
     }
 
     public function tinTrongLoai($idct)
@@ -38,7 +62,18 @@ class TinController extends Controller
             ->where('id', $idct)
             ->first();
         $data = ['idLT' => $idct, 'listTin' => $listTin];
-        return view('tin-trong-loai',compact('data','loaiTin','listTin'));
+
+        $hot = Article::with(['parts' => function ($query) {
+            $query->orderBy('order', 'desc');
+        }])
+            ->orderBy('view_count', 'desc')
+            ->limit(5)
+            ->get();
+        $tinmoi = DB::table('articles')
+            ->orderBy('created_at', 'desc')
+            ->limit('5')
+            ->get();
+        return view('tin-trong-loai', compact('data', 'loaiTin', 'listTin', 'hot', 'tinmoi'));
     }
     public function search(Request $request)
     {
@@ -48,9 +83,8 @@ class TinController extends Controller
             ->with(['parts' => function ($query) {
                 $query->where('type', 'image');
             }])
-            ->get();
+            ->paginate(3);
 
-        // Trả về view hiển thị kết quả tìm kiếm với biến $articles và $keyword
         return view('timkiem', compact('articles', 'keyword'));
     }
 }

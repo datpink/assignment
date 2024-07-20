@@ -33,8 +33,10 @@
     <div class="tk">
         <div class="htbg" style="background-image: url('/client/image/bg-tab.webp')">
             <h4>Từ khóa tìm kiếm:</h4>
-            <form action="">
-                <input type="text" class="form-control" value="{{ $keyword }}">
+            <form class="form-inline" action="{{ route('search') }}" method="GET">
+                <input class="form-control form-control-sm mr-1" type="search" placeholder="Tìm kiếm"
+                    aria-label="Search" name="q" value="{{ request('q') }}">
+                <button class="btn btn-outline-success btn-sm" type="submit">Tìm kiếm</button>
             </form>
         </div>
         @foreach ($articles as $article)
@@ -50,13 +52,15 @@
                     </div>
                     <div class="col-lg-9 text-tk">
                         <h4>{{ $article->title }}</h4>
-                        <p>{{ $article->content }}</p>
+                        <p style="color: black; ">{{ $article->content }}</p>
                     </div>
                 </div>
             </a>
         @endforeach
 
-
+        <div class="pagination">
+            {{ $articles->appends(['q' => request('q')])->links() }}
+        </div>
     </div>
 
     {{-- Footer --}}

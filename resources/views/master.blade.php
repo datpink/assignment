@@ -22,7 +22,31 @@
     @include('layout.nav')
 
     {{-- Banner --}}
+    <div class="bna">
+        <img src="/client/image/bnf.jpg" alt="">
+    </div>
 
+
+    {{-- ARticle --}}
+    <div class="featured-news-header">
+        <h3 class="featured-news-title">Tin nổi bật</h3>
+    </div>
+    <div class="featured-news-container">
+        @foreach ($tinnb as $ht)
+            @php
+                $image = $ht->getFirstImage();
+            @endphp
+            <div class="featured-news bong">
+                <a href="{{ route('chitiet', ['id' => $ht->id]) }}">
+                    @if ($image)
+                        <img src="{{ $image->image_path }}" alt="Featured Image">
+                    @endif
+                    <div class="featured-news-title"><p>{{ $ht->title }}</p></div>
+                </a>
+                <p class="time">{{ $ht->created_at }}</p>
+            </div>
+        @endforeach
+    </div>
     <div class="row banner">
         <div class="col-lg-6">
             <img src="/client/image/bn2.webp" alt="">
@@ -35,48 +59,6 @@
         </div>
     </div>
 
-    {{-- ARticle --}}
-    <div class="featured-news-header">
-        <h3 class="featured-news-title">Tin nổi bật</h3>
-    </div>
-    <div class="featured-news-container">
-        <div class="featured-news">
-            <a href="chitiet/1'">
-                <img src="/client/image/im1.webp" alt="News Image 1">
-                <div class="featured-news-title">Champions League 2024: Real Madrid vô địch thế nào?</div>
-            </a>
-            <p class="time">6:50 12/11/2024</p>
-        </div>
-        <div class="featured-news">
-            <img src="/client/image/im1.webp" alt="News Image 1">
-            <div class="featured-news-title">Champions League 2024: Real Madrid vô địch thế nào?</div>
-            <p class="time">6:50 12/11/2024</p>
-        </div>
-        <div class="featured-news">
-            <img src="/client/image/im1.webp" alt="News Image 1">
-            <div class="featured-news-title">Champions League 2024: Real Madrid vô địch thế nào?</div>
-            <p class="time">6:50 12/11/2024</p>
-        </div>
-        <div class="featured-news">
-            <img src="/client/image/im1.webp" alt="News Image 1">
-            <div class="featured-news-title">Champions League 2024: Real Madrid vô địch thế nào?</div>
-            <p class="time">6:50 12/11/2024</p>
-        </div>
-        <div class="featured-news">
-            <img src="/client/image/im1.webp" alt="News Image 1">
-            <div class="featured-news-title">Champions League 2024: Real Madrid vô địch thế nào?</div>
-            <p class="time">6:50 12/11/2024</p>
-        </div>
-        <div class="featured-news">
-            <img src="/client/image/im1.webp" alt="News Image 1">
-            <div class="featured-news-title">Champions League 2024: Real Madrid vô địch thế nào?</div>
-            <p class="time">6:50 12/11/2024</p>
-        </div>
-    </div>
-
-    <div class="bna">
-        <img src="/client/image/bnf.jpg" alt="">
-    </div>
 
 
     {{-- Footer --}}

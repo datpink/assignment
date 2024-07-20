@@ -22,4 +22,4 @@ Route::get('tk', function () {
 Route::get('/',[TinController::class,'index'])->name('home');
 Route::get('chitiet/{id}',[TinController::class,'find'])->name('chitiet');
 Route::get('cat/{id}', [TinController::class,'tinTrongLoai']);
-Route::post('/search', [TinController::class, 'search'])->name('search');
+Route::get('/search', [TinController::class, 'search'])->name('search');

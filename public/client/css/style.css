@@ -1,21 +1,91 @@
-/* Đặt màu chữ đen cho tất cả các thẻ <a> có class 'link' */
+.pagination {
+    display: flex;
+    justify-content: center;
+    /* Căn giữa các liên kết phân trang */
+    margin-top: 20px;
+    /* Khoảng cách từ các phần tử phía trên */
+}
+
+.pagination .page-item {
+    margin: 0 3px;
+    /* Khoảng cách giữa các liên kết */
+}
+
+.pagination .page-link {
+    color: #007bff;
+    /* Màu chữ */
+    text-decoration: none;
+    /* Xóa gạch chân */
+    padding: 8px 12px;
+    /* Khoảng cách bên trong liên kết */
+    border: 1px solid #dee2e6;
+    /* Viền của liên kết */
+    border-radius: 4px;
+    /* Bo góc liên kết */
+    font-size: 14px;
+    /* Kích thước chữ */
+    line-height: 1;
+    /* Đảm bảo rằng chiều cao dòng khớp với chiều cao của liên kết */
+    display: inline-flex;
+    /* Hiển thị theo dòng cho phép căn chỉnh chính xác */
+    justify-content: center;
+    /* Căn giữa nội dung bên trong */
+    align-items: center;
+    /* Căn giữa nội dung theo chiều dọc */
+}
+
+.pagination .page-link:hover {
+    background-color: #007bff;
+    /* Màu nền khi hover */
+    color: white;
+    /* Màu chữ khi hover */
+}
+
+.pagination .active .page-link {
+    background-color: #007bff;
+    /* Màu nền của liên kết đang hoạt động */
+    border-color: #007bff;
+    /* Màu viền của liên kết đang hoạt động */
+    color: white;
+    /* Màu chữ của liên kết đang hoạt động */
+}
+
 a.link {
     color: black;
-    text-decoration: none; /* Loại bỏ gạch chân */
+    text-decoration: none;
 }
 
-/* Đặt màu chữ đen cho các thẻ con bên trong thẻ <a> */
-a.link h4, a.link p {
+a.link h4,
+a.link p {
     color: black;
 }
 
-/* Khi hover vào thẻ <a>, thêm đổ bóng */
 .link:hover {
     box-shadow: 0px 8px 16px rgba(249, 9, 9, 0.3) !important;
 }
 
-/* Khi hover vào thẻ <a>, giữ màu chữ đen cho các thẻ con bên trong */
-a.link:hover h4, a.link:hover p {
+a.link:hover h4 {
+    color: rgb(255, 0, 0);
+}
+
+.link:hover p {
+    color: rgb(0, 0, 0);
+}
+
+a.link2 {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+a.link2 p {
+    color: rgb(255, 255, 255);
+}
+
+.link2:hover {
+    box-shadow: 0px 8px 16px rgba(249, 9, 9, 0.3) !important;
+}
+
+a.link2:hover p {
     color: rgb(255, 0, 0);
 }
 
@@ -127,8 +197,9 @@ nav {
 }
 
 
-/* CSS cho cụm banner */
+
 .banner {
+    margin-top: 30px;
     display: flex;
     align-items: center;
     /* Căn giữa theo chiều dọc */
@@ -137,18 +208,14 @@ nav {
 .banner .col-lg-6,
 .banner .col-lg-3 {
     padding: 0;
-    /* Loại bỏ padding để hình ảnh không bị lệch */
     overflow: hidden;
-    /* Đảm bảo phần ảnh phóng to không vượt ra ngoài khung */
     position: relative;
     /* Đảm bảo các ảnh không vượt quá khung khi phóng to */
 }
 
 .banner img {
     width: 100%;
-    /* Đảm bảo hình ảnh chiếm toàn bộ chiều rộng của phần tử cha */
     height: 100%;
-    /* Đảm bảo chiều cao đồng nhất cho tất cả các ảnh */
     object-fit: cover;
     /* Đảm bảo hình ảnh không bị biến dạng */
     display: block;
@@ -196,22 +263,29 @@ nav {
     text-align: center;
     padding: 20px;
     flex-shrink: 0;
-    /* Ngăn các phần tử con co lại quá nhiều */
     max-width: 25%;
-    /* Giới hạn chiều rộng tối đa của mỗi phần tử */
+    overflow: hidden;
+    border-radius: 3px;
 }
 
 .featured-news img {
-    width: 100%;
-    height: auto;
+    height: 150px;
     max-width: 100%;
+    border-radius: 3px;
+    object-fit: cover;
 }
 
 .featured-news-title {
+    color: black;
     margin-top: 10px;
     font-weight: 500;
     font-size: small;
     text-align: left;
+}
+
+.featured-news-title:hover {
+    color: red;
+    text-decoration: none;
 }
 
 .time {
@@ -241,9 +315,8 @@ nav {
 
 
 .bna {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
-    margin-top: 30px;
 }
 
 .bna img {
@@ -307,41 +380,50 @@ nav {
     background-color: #f0f0f0;
     width: 70%
 }
-.main-content h2{
+
+.main-content h2 {
     padding: 0;
 }
-.img-ct{
+
+.img-ct {
     min-height: 400px;
     width: 100%;
 }
-.img-ct img{
+
+.img-ct img {
     width: 100%;
     height: 100%;
 }
+
 .sidebar {
     width: 30%;
     padding: 20px;
     background-color: #e0e0e0;
     height: 100%;
 }
-.ct-ct{
+
+.ct-ct {
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
 .time {
     text-align: left;
 }
+
 .time-main {
     font-size: 15px;
     text-align: left;
     display: flex;
     align-items: center;
 }
-.time-main p{
+
+.time-main p {
     margin-top: 14px;
     padding: 5px 15px 5px 5px;
     font-weight: 500;
 }
+
 .igmf {
     width: 100%;
     margin: 0 auto;
@@ -406,9 +488,14 @@ nav {
     line-height: 17px;
 }
 
-.cte .col-lg-8{
+.text-cte p:hover {
+    color: red;
+}
+
+.cte .col-lg-8 {
     padding-right: 0px;
 }
+
 .cte2 {
     width: 100%;
     margin: 0 auto;
@@ -457,15 +544,17 @@ nav {
     /* Đặt màu viền cho thẻ hr */
 }
 
-.tk{
+.tk {
     width: 75%;
     margin: 0 auto;
     padding: 0;
     min-height: 800px;
 }
-.tk .col-lg-3{
+
+.tk .col-lg-3 {
     padding: 0;
 }
+
 .htbg {
     width: 100%;
     margin: 0 auto;
@@ -476,24 +565,39 @@ nav {
     margin-bottom: 30px;
     padding: 0;
 }
-.kun{
+
+.kun {
     width: 100%;
     margin: 0 auto;
     margin-top: 30px;
+}
+
+.kun:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.kun2:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bong:hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .htbg h4 {
     color: white;
     margin-left: 15px;
 }
-.img-tk{
+
+.img-tk {
     height: 170px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     overflow: hidden;
     position: relative;
 }
-.img-tk img{
+
+.img-tk img {
     width: 90%;
     height: 100%;
     object-fit: cover;
@@ -502,38 +606,121 @@ nav {
 
 
 .img-tk:hover img {
-    transform: scale(1.1); /* Phóng to ảnh khi hover */
+    transform: scale(1.1);
+    /* Phóng to ảnh khi hover */
 }
 
-.text-tk{
+.text-tk {
     margin-top: 20px;
 }
 
-
-.kun2{
+.kun2 {
     width: 100%;
     margin: 0 auto;
     margin-top: 30px;
 }
-.ttl .col-lg-3{
+
+.ttl .col-lg-3 {
     padding: 0;
 }
-.img-ttl{
+
+.img-ttl {
     height: 160px;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     overflow: hidden;
     position: relative;
 }
-.img-ttl img{
+
+.img-ttl img {
     width: 90%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
 }
+
 .img-ttl:hover img {
-    transform: scale(1.1); /* Phóng to ảnh khi hover */
+    transform: scale(1.1);
+    /* Phóng to ảnh khi hover */
 }
-.text-ttl{
+
+.text-ttl {
     margin-top: 5px;
+}
+
+.tcl {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+}
+
+.tcl-tin {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.tcl-bg {
+    width: 100%;
+    height: 50px;
+    background-size: 100% 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.tcl-bg h5 {
+    margin-left: 15px;
+    color: white;
+}
+
+.tcl-new {
+    border: 1px solid #ddd;
+    padding: 10px;
+    width: 30%;
+    display: flex;
+    margin: 10px 10px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.tcl-new a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.tcl-new a img {
+    max-width: 100%;
+    height: 120px;
+    width: auto;
+    display: block;
+    margin-bottom: 10px;
+    object-fit: cover;
+    border-radius: 3px;
+}
+
+
+.tcl-new a p {
+    font-size: 15px;
+    font-weight: 500;
+    color: #000000;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.tcl-new:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+.tcl-new:hover a p {
+    color: #ff0000;
+}
+
+.content-p{
+    font-size: 18px;
+    font-weight: 600;
 }

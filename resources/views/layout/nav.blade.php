@@ -25,8 +25,8 @@
             </div>
             <div class="col-lg-3 d-flex justify-content-end align-items-center">
                 <!-- Nội dung cột cuối cùng -->
-                <form class="form-inline" action="{{ route('search') }}" method="post">
-                    @csrf
+                <form class="form-inline" action="{{ route('search') }}" method="get">
+
                     <input class="form-control form-control-sm mr-1" type="search" placeholder="Tìm kiếm"
                         aria-label="Search" name="q">
                     <button class="btn btn-outline-success btn-sm" type="submit">Tìm kiếm</button>
