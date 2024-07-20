@@ -80,10 +80,11 @@ class TinController extends Controller
         $keyword = $request->input('q');
         $articles = Article::where('title', 'like', '%' . $keyword . '%')
             ->orWhere('content', 'like', '%' . $keyword . '%')
+            ->orderBy('created_at', 'desc')
             ->with(['parts' => function ($query) {
                 $query->where('type', 'image');
             }])
-            ->paginate(3);
+            ->paginate(5);
 
         return view('timkiem', compact('articles', 'keyword'));
     }
