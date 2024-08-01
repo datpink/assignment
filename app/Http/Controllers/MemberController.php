@@ -1,13 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Article;
-use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use SebastianBergmann\CodeCoverage\Driver\Selector;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
-class TinController extends Controller
+class MemberController extends Controller
 {
     public function index()
     {
@@ -17,7 +19,7 @@ class TinController extends Controller
             ->where('featured', '=', '1')
             ->limit('10')
             ->get();
-        return view("master", compact("tinnb"));
+        return view("layout.master", compact("tinnb"));
     }
 
     public function find($id)
@@ -45,12 +47,12 @@ class TinController extends Controller
             ->limit(5)
             ->get();
 
-        $tinmoi = DB::table('articles')
+        $tinmoi = Article::query()
             ->orderBy('created_at', 'desc')
             ->limit('5')
             ->get();
 
-        return view('chitiet', compact('article', 'hot', 'tinmoi','cungloai'));
+        return view('member.chitiet', compact('article', 'hot', 'tinmoi','cungloai'));
     }
 
     public function tinTrongLoai($idct)
@@ -73,7 +75,7 @@ class TinController extends Controller
             ->orderBy('created_at', 'desc')
             ->limit('5')
             ->get();
-        return view('tin-trong-loai', compact('data', 'loaiTin', 'listTin', 'hot', 'tinmoi'));
+        return view('member.tin-trong-loai', compact('data', 'loaiTin', 'listTin', 'hot', 'tinmoi'));
     }
     public function search(Request $request)
     {
@@ -86,6 +88,69 @@ class TinController extends Controller
             }])
             ->paginate(5);
 
-        return view('timkiem', compact('articles', 'keyword'));
+        return view('member.timkiem', compact('articles', 'keyword'));
     }
+
+    // Đăng jys đăng nhập
+
+    public function showRegistrationForm()
+    {
+        return view('register');
+    }
+
+    public function register(Request $request)
+    {
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+            'type' => 'member',
+        ]);
+
+        Auth::login($user);
+
+        return redirect('login');
+    }
+    public function showLoginForm()
+    {
+        return view('login');
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->route('home')->with('success', 'Đăng nhập thành công');
+        }
+
+        return back()->withErrors([
+            'email' => 'Thông tin đăng nhập không chính xác',
+        ]);
+    }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('home');
+    }
+
 }
+
+

@@ -15,8 +15,7 @@
                 </a>
             </div>
             <div class="col-lg-4 text-center">
-                <img src="https://th.bing.com/th/id/OIP.2hAVCZRMcBjsE8AGQfWCVQHaHa?rs=1&pid=ImgDetMain"
-                    alt="" style="height: 25px"><span class="ml-1 text-white">Login</span>
+                <img src="/client/image/OIP.jpg" alt="" style="height: 25px" class="ic"><span class="ml-1 text-white">Login</span>
             </div>
         </div>
     </div>

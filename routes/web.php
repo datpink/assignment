@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\ForgotPasswordController;
+use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\TinController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,11 +19,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('tk', function () {
-    return view('timkiem');
-});
 
-Route::get('/',[TinController::class,'index'])->name('home');
-Route::get('chitiet/{id}',[TinController::class,'find'])->name('chitiet');
-Route::get('cat/{id}', [TinController::class,'tinTrongLoai']);
-Route::get('/search', [TinController::class, 'search'])->name('search');
+
+Route::get('/home',[MemberController::class,'index'])->name('home');
+
+Route::get('chitiet/{id}',[MemberController::class,'find'])->name('chitiet');
+Route::get('cat/{id}', [MemberController::class,'tinTrongLoai']);
+Route::get('search', [MemberController::class, 'search'])->name('search');
+
+
+Route::get('register', [MemberController::class, 'showRegistrationForm'])->name('register');
+Route::post('register', [MemberController::class, 'register']);
+
+Route::get('login', [MemberController::class, 'showLoginForm'])->name('login');
+Route::post('login', [MemberController::class, 'login']);
+Route::post('logout', [MemberController::class, 'logout'])->name('logout');
+
+
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendPasswordEmail'])->name('password.email');
