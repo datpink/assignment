@@ -20,12 +20,12 @@
                 </a>
 
                 @if (!Auth::check())
-                <span class="text-white">Khách |</span>
+                    <span class="text-white">Khách |</span>
                     <a href="{{ route('login') }}">
                         <span class="ml-1 text-white">Đăng nhập</span>
                     </a>
                 @else
-                <span class="text-white">{{ Auth::user()->name }}  |</span>
+                    <span class="text-white">{{ Auth::user()->name }} |</span>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); confirmLogout();">
                         <span class="ml-1 text-white">Đăng xuất</span>
                     </a>
@@ -34,11 +34,12 @@
             </div>
         </div>
     </div>
+
     <script>
         function confirmLogout() {
-        if (confirm('Bạn có chắc muốn đăng xuất khỏi tài khoản không?')) {
-            window.location.href = "{{ route('logout') }}";
+            if (confirm('Bạn có chắc muốn đăng xuất khỏi tài khoản không?')) {
+                window.location.href = "{{ route('logout') }}";
+            }
         }
-    }
     </script>
 </header>

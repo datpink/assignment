@@ -14,4 +14,9 @@ class ArticlePart extends Model
     {
         return $this->belongsTo(Article::class);
     }
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+    public $timestamps = true;
 }

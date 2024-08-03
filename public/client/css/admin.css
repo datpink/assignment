@@ -59,3 +59,10 @@
     background-color: #f8f9fa;
     height: 100vh;
 }
+
+.title-column {
+    max-width: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

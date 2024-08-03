@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\ArticleController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\MemberController;
@@ -42,3 +43,5 @@ Route::post('/forgot-password', [ForgotPasswordController::class, 'sendPasswordE
 
 
 Route::get('admin-home',[AdminController::class,'index'])->name('admin-home');
+
+Route::resource('articles', ArticleController::class);
