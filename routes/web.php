@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\ForgotPasswordController;
 use App\Http\Controllers\MemberController;
@@ -21,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::get('/home',[MemberController::class,'index'])->name('home');
+Route::get('/',[MemberController::class,'index'])->name('home');
 
 Route::get('chitiet/{id}',[MemberController::class,'find'])->name('chitiet');
 Route::get('cat/{id}', [MemberController::class,'tinTrongLoai']);
@@ -33,8 +34,11 @@ Route::post('register', [MemberController::class, 'register']);
 
 Route::get('login', [MemberController::class, 'showLoginForm'])->name('login');
 Route::post('login', [MemberController::class, 'login']);
-Route::post('logout', [MemberController::class, 'logout'])->name('logout');
+Route::get('logout', [MemberController::class, 'logout'])->name('logout');
 
 
 Route::get('/forgot-password', [ForgotPasswordController::class, 'showForm'])->name('password.request');
 Route::post('/forgot-password', [ForgotPasswordController::class, 'sendPasswordEmail'])->name('password.email');
+
+
+Route::get('admin-home',[AdminController::class,'index'])->name('admin-home');

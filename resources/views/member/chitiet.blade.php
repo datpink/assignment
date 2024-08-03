@@ -9,11 +9,6 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/client/css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-    <style>
-
-
-    </style>
 </head>
 
 <body>

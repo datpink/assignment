@@ -7,6 +7,9 @@
     <title>@yield('title', 'Trang tin tức')</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
     <link rel="stylesheet" href="/client/css/style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
@@ -20,7 +23,11 @@
 
     {{-- Nav --}}
     @include('layout.nav')
-
+    @if (session('success'))
+        <div class="alert alert-success alert-dismissible fade show" role="alert" style="margin: 0">
+            {{ session('success') }}
+        </div>
+    @endif
     {{-- Banner --}}
     <div class="bna">
         <img src="/client/image/bnf.jpg" alt="">
@@ -41,7 +48,9 @@
                     @if ($image)
                         <img src="{{ $image->image_path }}" alt="Featured Image">
                     @endif
-                    <div class="featured-news-title"><p>{{ $ht->title }}</p></div>
+                    <div class="featured-news-title">
+                        <p>{{ $ht->title }}</p>
+                    </div>
                 </a>
                 <p class="time">{{ $ht->created_at }}</p>
             </div>

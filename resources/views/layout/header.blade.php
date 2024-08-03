@@ -15,8 +15,30 @@
                 </a>
             </div>
             <div class="col-lg-4 text-center">
-                <img src="/client/image/OIP.jpg" alt="" style="height: 25px" class="ic"><span class="ml-1 text-white">Login</span>
+                <a href="">
+                    <img src="/client/image/OIP.jpg" alt="" style="height: 25px" class="ic">
+                </a>
+
+                @if (!Auth::check())
+                <span class="text-white">Khách |</span>
+                    <a href="{{ route('login') }}">
+                        <span class="ml-1 text-white">Đăng nhập</span>
+                    </a>
+                @else
+                <span class="text-white">{{ Auth::user()->name }}  |</span>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); confirmLogout();">
+                        <span class="ml-1 text-white">Đăng xuất</span>
+                    </a>
+                @endif
+
             </div>
         </div>
     </div>
+    <script>
+        function confirmLogout() {
+        if (confirm('Bạn có chắc muốn đăng xuất khỏi tài khoản không?')) {
+            window.location.href = "{{ route('logout') }}";
+        }
+    }
+    </script>
 </header>

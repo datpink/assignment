@@ -22,7 +22,7 @@ class ForgotPasswordController extends Controller
 
         $email = $request->input('email');
         $user = User::where('email', $email)->first();
-        $password = $user->password; // Mật khẩu đã mã hóa
+        $password = $user->plain_password;
 
         // Gửi email
         Mail::to($email)->send(new ForgotPasswordMail($password));

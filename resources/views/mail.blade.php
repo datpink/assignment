@@ -6,6 +6,6 @@
 </head>
 <body>
     <h1>Mật Khẩu Của Bạn</h1>
-    <p>Mật khẩu của bạn là: {{ $password }}</p>
+    <p>Mật khẩu của bạn là: <strong style="color: red">{{ $password }}</strong></p>
 </body>
 </html>

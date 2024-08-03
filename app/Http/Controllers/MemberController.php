@@ -110,6 +110,7 @@ class MemberController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'plain_password' => $request->password,
             'type' => 'member',
         ]);
 
@@ -133,7 +134,11 @@ class MemberController extends Controller
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->route('home')->with('success', 'Đăng nhập thành công');
+            if(Auth::user()->type === 'member' ){
+                return redirect()->route('home')->with('success', 'Đăng nhập thành công!');
+            }
+            return redirect()->route('admin-home')->with('success','Đăng nhập thành công!');
+
         }
 
         return back()->withErrors([
@@ -148,7 +153,9 @@ class MemberController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect('home');
+
+
+        return redirect()->route('home')->with('success','Đăng xuất thành công!');
     }
 
 }

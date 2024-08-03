@@ -52,7 +52,7 @@
                     @csrf
 
                     <div class="form-group mt-3">
-                        <label for="name">Name</label>
+                        <label for="name">Tên</label>
                         <input type="text" name="name" id="name" class="form-control"
                             value="{{ old('name') }}">
                     </div>
@@ -64,17 +64,17 @@
                     </div>
 
                     <div class="form-group mt-3">
-                        <label for="password">Password</label>
+                        <label for="password">Mật khẩu</label>
                         <input type="password" name="password" id="password" class="form-control">
                     </div>
 
                     <div class="form-group mt-3">
-                        <label for="password_confirmation">Confirm Password</label>
+                        <label for="password_confirmation">Xác nhận mật khẩu</label>
                         <input type="password" name="password_confirmation" id="password_confirmation"
                             class="form-control">
                     </div>
 
-                    <button type="submit" class="btn btn-primary mt-3">Register</button>
+                    <button type="submit" class="btn btn-primary mt-3">Đăng ký</button>
                 </form>
             </div>
         </div>

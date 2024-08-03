@@ -4,7 +4,7 @@
     <title>@yield('title', 'Trang tin tức')</title>
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="/client/css/style.css">
     <style>
         header {
             background-color: #000000;

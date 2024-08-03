@@ -45,7 +45,7 @@
                 <h3 class="card-title">Form Đăng ký</h3>
             </div>
             <div class="card-body">
-                <a href="{{ route('register') }}"><button class="btn btn-primary mb-5">Sign up</button></a>
+                <a href="{{ route('register') }}"><button class="btn btn-primary mb-5">Đăng ký</button></a>
                 <form method="POST" action="{{ url('/login') }}">
                     @csrf
                     <div class="form-group">
@@ -53,11 +53,11 @@
                         <input type="email" name="email" class="form-control" id="email">
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password">Mật khẩu</label>
                         <input type="password" name="password" class="form-control" id="password">
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary">Đăng nhập</button>
                 </form>
                 <div class="mt-3">
                     <a href="{{ route('password.request') }}">Quên mật khẩu?</a>

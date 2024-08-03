@@ -10,7 +10,7 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 
-<body>
+<body style="min-height: 600px">
     @include('layout.header')
     @include('layout.nav')
 
