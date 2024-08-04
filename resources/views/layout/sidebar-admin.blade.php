@@ -4,26 +4,31 @@
     </div>
     <hr>
     <ul>
-        <li><a href="{{ route('admin-home') }}">Home</a></li>
+        <li><a href="{{ route('admin-home') }}">Trang chủ</a></li>
         <li>
-            <a href="">Categories</a>
+            <a href="">Danh mục</a>
             <ul class="submenu">
-                <li><a href="">Add New Category</a></li>
-                <li><a href="">View All Categories</a></li>
+                <li><a href="{{ route('categories.create') }}">Thêm mới danh mục</a></li>
+                <li><a href="{{ route('categories.index') }}">Tất cả danh mục</a></li>
             </ul>
         </li>
         <li>
-            <a>Products</a>
+            <a>Tin tức</a>
             <ul class="submenu">
-                <li><a href="{{ route('articles.create') }}">Add New Product</a></li>
-                <li><a href="{{ route('articles.index') }}">View All Products</a></li>
+                <li><a href="{{ route('articles.create') }}">Thêm mới tin tức</a></li>
+                <li><a href="{{ route('articles.index') }}">Tất cả tin tức</a></li>
             </ul>
         </li>
 
-        <li><a href="">Orders</a></li>
-        <li><a href="">Users</a></li>
+        <li>
+            <a href="">Tài khoản</a>
+            <ul class="submenu">
+                <li><a href="{{ route('accounts.create') }}">Thêm mới tài khoản</a></li>
+                <li><a href="{{ route('accounts.index') }}">Tất cả tài khoản</a></li>
+            </ul>
+        </li>
         <hr>
-        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); confirmLogout();">Logout =></a></li>
+        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); confirmLogout();">Đăng xuất =></a></li>
         <script>
             function confirmLogout() {
                 if (confirm('Bạn có chắc muốn đăng xuất khỏi tài khoản không?')) {

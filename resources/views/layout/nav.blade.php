@@ -1,6 +1,6 @@
 <?php
     $cate= DB::table('categories')->select('id','name')
-    ->orderby('oder','asc')
+    ->orderby('order','asc')
     ->where('hidden',1)
     ->limit(5)->get();
 ?>

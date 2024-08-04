@@ -15,7 +15,7 @@ class CreateCategoriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->Integer('hidden')->default(1);
-            $table->integer('oder')->default(0);
+            $table->integer('order')->default(0);
             $table->timestamps();
         });
     }

@@ -10,12 +10,9 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'content',
-        'user_id',
-        'published_at',
-        'featured',
-        'view_count'
+        'name',
+        'hidden',
+        'order',
     ];
 
     protected $casts = [

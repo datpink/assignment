@@ -24,10 +24,18 @@
                     <a href="{{ route('login') }}">
                         <span class="ml-1 text-white">Đăng nhập</span>
                     </a>
+                @elseif (Auth::user()->type === 'admin')
+                    <span class="text-white">{{ Auth::user()->name }} |</span>
+                    <a href="{{ route('admin-home') }}">
+                        <span class="ml-1 text-white">Quản lí |</span>
+                    </a>
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); confirmLogout();">
+                        <span class="ml-1 text-white">Đăng xuất </span>
+                    </a>
                 @else
                     <span class="text-white">{{ Auth::user()->name }} |</span>
                     <a href="{{ route('logout') }}" onclick="event.preventDefault(); confirmLogout();">
-                        <span class="ml-1 text-white">Đăng xuất</span>
+                        <span class="ml-1 text-white">Đăng xuất </span>
                     </a>
                 @endif
 

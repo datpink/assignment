@@ -41,13 +41,20 @@
                             <td>{{ $article->category->name }}</td>
                             <td>
                                 @php
-                                    $image = $article->getFirstImage()->image_path;
+                                    $partWithImage = $article->parts->where('type', 'image')->first();
                                 @endphp
-                                @if ($image && \Storage::exists($image))
-                                    <img src="{{ \Storage::url($image) }}" alt="{{ $article->title }}"
-                                        width="100">
+
+                                @if ($partWithImage && $partWithImage->image_path && \Storage::exists($partWithImage->image_path))
+                                    @php
+                                        $image = $partWithImage->image_path;
+                                    @endphp
+                                    <img src="{{ \Storage::url($image) }}" alt="{{ $article->title }}" width="100">
                                 @else
-                                    <img src="{{ $image }}" alt="" width="100">
+                                    {{-- @php
+                                        $image2 = $article->parts->where('type', 'image')->first()->image_path;
+                                    @endphp
+                                    <img src="{{ $image }}" alt="" width="100"> --}}
+                                    Không có ảnh (ảnh này cope link hehe)
                                 @endif
 
                             </td>
@@ -59,7 +66,8 @@
                                     Chi tiết
                                 </a>
                                 <form action="{{ route('articles.destroy', $article->id) }}" method="POST"
-                                    class="d-inline-block" onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài viết này?');">
+                                    class="d-inline-block"
+                                    onsubmit="return confirm('Bạn có chắc chắn muốn xóa bài viết này?');">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger">Xóa</button>

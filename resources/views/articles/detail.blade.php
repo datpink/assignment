@@ -65,11 +65,22 @@
                         </div>
                     @elseif($part->type == 'image')
                         <div class="image_field">
-                            @if($part->image_path)
-                                <img src="{{ asset('storage/' . $part->image_path) }}" alt="{{ $part->content }}">
-                            @else
-                                <p>Không có ảnh</p>
-                            @endif
+                            @php
+                                    $partWithImage = $article->parts->where('type', 'image')->first();
+                                @endphp
+
+                                @if ($partWithImage && $partWithImage->image_path && \Storage::exists($partWithImage->image_path))
+                                    @php
+                                        $image = $partWithImage->image_path;
+                                    @endphp
+                                    <img src="{{ \Storage::url($image) }}" alt="{{ $article->title }}" width="100">
+                                @else
+                                    {{-- @php
+                                        $image2 = $article->parts->where('type', 'image')->first()->image_path;
+                                    @endphp
+                                    <img src="{{ $image }}" alt="" width="100"> --}}
+                                    Không có ảnh (ảnh này cope link hehe)
+                                @endif
                         </div>
                     @endif
                     <p><strong>Thứ tự:</strong> {{ $part->order }}</p>
