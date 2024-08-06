@@ -30,31 +30,55 @@
                 <p>{{ $user->name }}</p><em>{{ $article->created_at }}</em>
             </div>
             <p class="content-p">{{ $article->content }}</h4>
-            @foreach ($article->parts as $part)
-                <div>
-                    @if ($part->type == 'text')
-                        <p class="ct-ct">{{ $part->content }}</p>
-                    @elseif($part->type == 'image')
-                        <div class="img-ct">
-                            <img src="{{ $part->image_path }}">
-                        </div>
-                    @endif
-                </div>
-            @endforeach
+                @foreach ($article->parts as $part)
+                    <div>
+                        @if ($part->type == 'text')
+                            <p class="ct-ct">{{ $part->content }}</p>
+                        @elseif($part->type == 'image')
+                            <div class="img-ct">
+                                @php
+                                    $partWithImage = $article->parts->where('type', 'image')->first();
+                                @endphp
+
+                                @if ($partWithImage && $partWithImage->image_path && \Storage::exists($partWithImage->image_path))
+                                    @php
+                                        $image = $partWithImage->image_path;
+                                    @endphp
+                                    <img src="{{ \Storage::url($image) }}" alt="{{ $article->title }}" width="100">
+                                @else
+                                    {{-- @php
+                                        $image2 = $article->parts->where('type', 'image')->first()->image_path;
+                                    @endphp
+                                    <img src="{{ $image }}" alt="" width="100"> --}}
+                                    Không có ảnh (ảnh này cope link hehe)
+                                @endif
+                            </div>
+                        @endif
+                    </div>
+                @endforeach
             <div class="tcl">
                 <div class="tcl-bg" style="background-image: url('/client/image/bg-tab.webp')">
                     <h5>Tin cùng danh mục</h5>
                 </div>
                 <div class="tcl-tin">
                     @foreach ($cungloai as $ht)
-                        @php
-                            $image = $ht->getFirstImage();
-                        @endphp
-
                         <div class="tcl-new bong">
                             <a href="{{ route('chitiet', ['id' => $ht->id]) }}">
-                                @if ($image)
-                                    <img src="{{ $image->image_path }}" alt="Image">
+                                @php
+                                    $partWithImage = $ht->parts->where('type', 'image')->first();
+                                @endphp
+
+                                @if ($partWithImage && $partWithImage->image_path && \Storage::exists($partWithImage->image_path))
+                                    @php
+                                        $image = $partWithImage->image_path;
+                                    @endphp
+                                    <img src="{{ \Storage::url($image) }}" alt="{{ $ht->title }}" width="100">
+                                @else
+                                    {{-- @php
+                                            $image2 = $article->parts->where('type', 'image')->first()->image_path;
+                                        @endphp
+                                        <img src="{{ $image }}" alt="" width="100"> --}}
+                                    Không có ảnh (ảnh này cope link hehe)
                                 @endif
                                 <p>{{ $ht->title }}</p>
                             </a>
@@ -73,15 +97,24 @@
                     <h4> TIN NÓNG</h4>
                 </div>
                 @foreach ($hot as $ht)
-                    @php
-                        $image = $ht->getFirstImage();
-                    @endphp
                     <a href="{{ route('chitiet', ['id' => $ht->id]) }}" class="link">
-
                         <div class="cte row bong">
-                            <div class=" col-lg-4 img-cte">
-                                @if ($image)
-                                    <img src="{{ $image->image_path }}" alt="Featured Image">
+                            <div class="col-lg-4 img-cte">
+                                @php
+                                    $partWithImage = $ht->parts->where('type', 'image')->first();
+                                @endphp
+
+                                @if ($partWithImage && $partWithImage->image_path && \Storage::exists($partWithImage->image_path))
+                                    @php
+                                        $image = $partWithImage->image_path;
+                                    @endphp
+                                    <img src="{{ \Storage::url($image) }}" alt="{{ $ht->title }}" width="100">
+                                @else
+                                    {{-- @php
+                                            $image2 = $article->parts->where('type', 'image')->first()->image_path;
+                                        @endphp
+                                        <img src="{{ $image }}" alt="" width="100"> --}}
+                                    Không có ảnh (ảnh này cope link hehe)
                                 @endif
                             </div>
                             <div class="col-lg-8 text-cte">
@@ -91,6 +124,8 @@
                         </div>
                     </a>
                 @endforeach
+
+
 
             </div>
             <div class="sbsl">

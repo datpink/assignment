@@ -41,7 +41,6 @@ class ArticleController extends Controller
         DB::beginTransaction();
 
         try {
-            // Lưu bài viết
             $user_id = Auth::user()->id;
             $article = Article::create([
                 'title' => $request->title,
@@ -52,8 +51,6 @@ class ArticleController extends Controller
                 'view_count' => 0,
                 'category_id' => $request->category_id,
             ]);
-
-            // Lưu các phần của bài viết
             foreach ($request->article_parts as $part) {
                 $data = [
                     'article_id' => $article->id,
@@ -63,7 +60,6 @@ class ArticleController extends Controller
                 ];
 
                 if ($part['type'] === 'image' && isset($part['image_path'])) {
-                    // Xử lý file tải lên
                     $path = Storage::put('images', $part['image_path']);
                     $data['image_path'] = $path;
                 }
@@ -73,7 +69,7 @@ class ArticleController extends Controller
 
             DB::commit();
 
-            return redirect()->route('articles.index')->with('success', 'Article created successfully!');
+            return redirect()->route('articles.index')->with('success', 'Thêm mới tin hành công!');
         } catch (\Exception $e) {
             DB::rollback();
             Log::error('Error creating article: ' . $e->getMessage());
@@ -84,6 +80,7 @@ class ArticleController extends Controller
     /**
      * Display the specified resource.
      */
+    
     public function show(Article $article)
     {
         $article->load('parts'); // Eager load parts
@@ -115,39 +112,33 @@ class ArticleController extends Controller
         ]);
         $article = Article::findOrFail($id);
 
-        // Cập nhật thông tin bài viết
         $article->update([
             'title' => $request->input('title'),
             'category_id' => $request->input('category_id'),
             'content' => $request->input('content'),
         ]);
 
-        // Xóa các phần bài viết cũ không còn tồn tại trong request
         $existingPartIds = $request->input('article_parts.*.id', []);
         ArticlePart::where('article_id', $article->id)
             ->whereNotIn('id', $existingPartIds)
             ->delete();
 
-        // Xử lý các phần bài viết từ request
         $parts = $request->input('article_parts', []);
 
         foreach ($parts as $index => $part) {
-            // Tìm phần bài viết dựa trên ID và article_id
             $articlePart = ArticlePart::where('article_id', $article->id)
                 ->where('id', $part['id'] ?? null)
                 ->first();
 
-            // Xử lý ảnh
             if ($part['type'] === 'image') {
                 $imagePath = $request->hasFile('article_parts.' . $index . '.image_path')
                     ? $request->file('article_parts.' . $index . '.image_path')->store('images', 'public')
-                    : ($articlePart ? $articlePart->image_path : null); // Giữ ảnh cũ nếu không có ảnh mới
+                    : ($articlePart ? $articlePart->image_path : null);
             } else {
-                $imagePath = null; // Không có ảnh cho loại text
+                $imagePath = null;
             }
 
             if ($articlePart) {
-                // Cập nhật phần bài viết
                 $articlePart->update([
                     'type' => $part['type'],
                     'content' => $part['content'] ?? null,
@@ -155,7 +146,6 @@ class ArticleController extends Controller
                     'image_path' => $imagePath,
                 ]);
             } else {
-                // Tạo mới phần bài viết
                 ArticlePart::create([
                     'article_id' => $article->id,
                     'type' => $part['type'],

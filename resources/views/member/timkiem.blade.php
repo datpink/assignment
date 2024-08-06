@@ -42,12 +42,22 @@
         @foreach ($articles as $article)
             <a href="{{ route('chitiet', ['id' => $article->id]) }}" class="link">
                 <div class="kun row">
-                    @php
-                        $image = $article->getFirstImage();
-                    @endphp
                     <div class=" col-lg-3 img-tk">
-                        @if ($image)
-                            <img src="{{ $image->image_path }}" alt="Featured Image">
+                        @php
+                            $partWithImage = $article->parts->where('type', 'image')->first();
+                        @endphp
+
+                        @if ($partWithImage && $partWithImage->image_path && \Storage::exists($partWithImage->image_path))
+                            @php
+                                $image = $partWithImage->image_path;
+                            @endphp
+                            <img src="{{ \Storage::url($image) }}" alt="{{ $article->title }}" width="100">
+                        @else
+                            {{-- @php
+                                            $image2 = $article->parts->where('type', 'image')->first()->image_path;
+                                        @endphp
+                                        <img src="{{ $image }}" alt="" width="100"> --}}
+                            Không có ảnh (ảnh này cope link hehe)
                         @endif
                     </div>
                     <div class="col-lg-9 text-tk">

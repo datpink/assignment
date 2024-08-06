@@ -36,8 +36,6 @@ class MemberController extends Controller
             ->get();
 
         $product = Article::find($id);
-
-        // Lấy ra category_id từ sản phẩm
         $categoryId = $product->category_id;
         $cungloai = Article::with(['parts' => function ($query) {
             $query->orderBy('order', 'desc');
